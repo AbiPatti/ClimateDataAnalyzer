@@ -33,6 +33,9 @@ print(df_temps.shape)
 print(df_temps.dtypes)
 print("\nOverall mean: ", df_temps.stack().mean().round(2))
 
+# Save DataFrame as csv
+df_temps.to_csv("temperatures.csv")
+
 # Average temp per city - axis=0 for mean along rows
 print("\nAverage temperature per city: ")
 print(df_temps.mean(0))
