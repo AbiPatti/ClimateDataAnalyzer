@@ -72,3 +72,21 @@ monthly_min = df_temps.min(1)
 coldest_temp = monthly_min.min()
 coldest_month = df_temps.loc[monthly_min == coldest_temp]
 print(coldest_month)
+
+# --- PLOTTING ---
+
+# Create a line plot for all cities
+plt.plot(df_temps.index, df_temps["New York"], label="New York")
+plt.plot(df_temps.index, df_temps["London"], label="London")
+plt.plot(df_temps.index, df_temps["Tokyo"], label="Tokyo")
+
+# Add labels and title
+plt.xlabel("Month")
+plt.ylabel("Temperature (°C)")
+plt.title("Monthly Average Temperatures in 3 Cities")
+
+# Add legend to identify each line
+plt.legend()
+
+# Show the plot
+plt.show()
